@@ -1,0 +1,33 @@
+{
+  "model_config": {
+    "ensemble_models": ["RandomForest", "GradientBoosting", "LogisticRegression"],
+    "feature_extraction": {
+      "tfidf_word_features": 5000,
+      "tfidf_char_features": 2000,
+      "ngram_range_word": [1, 2],
+      "ngram_range_char": [2, 4]
+    },
+    "training": {
+      "test_size": 0.2,
+      "random_state": 42,
+      "cross_validation_folds": 5
+    }
+  },
+  "api_config": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "reload": true,
+    "log_level": "info"
+  },
+  "cache_config": {
+    "redis_host": "localhost",
+    "redis_port": 6379,
+    "cache_ttl": 3600
+  },
+  "dataset_config": {
+    "data_dir": "datasets",
+    "model_dir": "models",
+    "default_datasets": ["yelp_chi", "deceptive_opinion_spam"],
+    "kaggle_datasets": ["fake-reviews-dataset", "amazon-fake-reviews"]
+  }
+}
